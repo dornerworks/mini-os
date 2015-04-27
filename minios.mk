@@ -2,6 +2,8 @@
 # The file contains the common make rules for building mini-os.
 #
 
+include $(MINI-OS_ROOT)/config/MiniOS.mk
+
 debug = y
 
 # Define some default flags.
