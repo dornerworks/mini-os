@@ -4,3 +4,11 @@ ARCH_CFLAGS  := -march=armv7-a -marm -fms-extensions -D__arm__ -DXEN_HAVE_PV_GUE
 EXTRA_INC += $(TARGET_ARCH_DIR)/include/$(XEN_TARGET_ARCH)
 EXTRA_SRC += arch/$(EXTRA_INC)
 endif
+
+ifeq ($(XEN_TARGET_ARCH),arm64)
+DEF_ASFLAGS += -march=armv8-a -mfpu=vfpv3
+ARCH_CFLAGS  := -march=armv8-a -marm -fms-extensions -D__arm__ -DXEN_HAVE_PV_GUEST_ENTRY #-DCPU_EXCLUSIVE_LDST
+EXTRA_INC += $(TARGET_ARCH_DIR)/include/$(XEN_TARGET_ARCH)
+EXTRA_SRC += arch/$(EXTRA_INC)
+endif
+

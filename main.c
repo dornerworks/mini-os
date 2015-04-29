@@ -23,7 +23,7 @@ extern void __libc_fini_array(void);
 extern unsigned long __CTOR_LIST__[];
 extern unsigned long __DTOR_LIST__[];
 
-#if 0
+#if 1
 #include <stdio.h>
 int main(int argc, char *argv[], char *envp[])
 {
